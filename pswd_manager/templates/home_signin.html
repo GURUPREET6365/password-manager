@@ -1,0 +1,31 @@
+<!-- From here i am using base_template.html file for creating the web page. -->
+
+<!-- The syntax below is known as jinja syntax -->
+{% extends "signin_base_template.html"%}
+
+<!-- In the base template page i wrote the syntax for changing the title of the page and that title i will change from here. -->
+
+{% block title %} Password Manager {% endblock %} {% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Manage Your Password</h2>
+  <table class="table table-bordered table-hover text-center align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>Action</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+      <tr>
+        <td>{{ item.action }}</td>
+        <td>
+          <a href="{{ item.link }}" class="btn btn-primary">Click Here</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

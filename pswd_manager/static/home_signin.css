@@ -1,0 +1,46 @@
+
+body {
+    background-color: #c4c1cd !important;
+}
+
+/* Overwrite Bootstrap dark navbar background with gradient */
+.custom-navbar {
+  background: linear-gradient(90deg, #5577aa, #37166d);
+}
+
+/* Adjust navbar height and spacing */
+.custom-navbar .nav-link {
+  padding: 8px 15px;
+  font-size: 1rem;
+}
+
+/* Wrapper for hover effect */
+.username-wrapper {
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Delete button hidden by default */
+.username-wrapper .delete-btn {
+  display: none;
+  position: absolute;
+  top: 50px; /* Adjust distance below the circle */
+  left: 0;
+  z-index: 1000;
+  white-space: nowrap;
+  transition: 7;
+  transition: 0.3s;
+}
+
+/* Show button on hover */
+.username-wrapper:hover .delete-btn {
+  display: block;
+  transition: 0.3s;
+}
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* optional to adjust spacing */
+}
+

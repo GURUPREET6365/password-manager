@@ -1,0 +1,65 @@
+{% extends "base_template.html"%} {% block title %} Password Manager: Home {%
+endblock %} {% block button %}
+<li class="nav-item">
+  <a class="btn btn-outline-light ms-2" href="{{ url_for('register_page')}}"
+    >Register</a
+  >
+</li>
+<li class="nav-item">
+  <a class="btn btn-light text-dark ms-2" href="{{ url_for('login_page')}}"
+    >Login</a
+  >
+</li>
+{% endblock %}
+
+<!-- This is the flash message for logout route to display and dissappear in 3 second -->
+<!-- Add this where you want flash messages to appear, e.g., at the top of body -->
+<div class="container mt-3 w-50">
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %} {% for category, message in messages %}
+  <div
+    class="flash-message alert alert-{{ category }} alert-dismissible fade show"
+    role="alert"
+  >
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+  {% endfor %} {% endif %} {% endwith %}
+</div>
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body text-center p-5 bg-info">
+          <h1 class="fw-bold mb-3 text-success">Password Manager</h1>
+          <p class="text-dark fs-5">
+            Your digital life deserves the highest level of protection.
+            This Password Manager is a modern, easy‑to‑use password manager that helps you
+            safely store and manage all your credentials in one place. With
+            end‑to‑end encryption, multi‑device access, and a clean interface,
+            you’ll never have to worry about forgetting or reusing weak
+            passwords again.
+           <br><br>
+            Start building stronger habits today – organize your logins, keep
+            your data safe, and access everything you need with peace of mind.
+            Security has never been this simple.
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<script>
+  setTimeout(function () {
+    document.querySelectorAll(".flash-message").forEach(function (alert) {
+      let bsAlert = new bootstrap.Alert(alert);
+      bsAlert.close();
+    });
+  }, 3000);
+</script>

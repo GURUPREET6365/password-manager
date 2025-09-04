@@ -1,0 +1,67 @@
+body {
+    background-color: #c4c1cd !important;
+}
+
+
+/* Overwrite Bootstrap dark navbar background with gradient */
+.custom-navbar {
+  background: linear-gradient(90deg, #5577aa, #37166d);
+}
+
+/* Adjust navbar height and spacing */
+.custom-navbar .nav-link {
+  padding: 8px 15px;
+  font-size: 1rem;
+}
+
+/* Override Bootstrap buttons */
+.btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #0d6efd;
+}
+
+.btn-light {
+  background-color: white;
+  border: none;
+}
+
+.btn-light:hover {
+  background-color: #e6e6e6;
+}
+
+/* Marquee container */
+.marquee-container {
+  background: linear-gradient(90deg, #1c5b29, #929213);
+  position: relative;
+  overflow: hidden;
+  height: 60px;
+  background-color: #0d6efd; /* Bootstrap primary color */
+  color: white;
+  border-radius: 5px;
+}
+
+/* Scrolling text */
+.marquee-text {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 8s linear infinite;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
