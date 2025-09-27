@@ -20,3 +20,11 @@ def get_db_connection():
     return connection
 
 from pswd_manager import routes
+
+
+def create_app():
+    app = Flask(__name__)
+    app.config.from_mapping(SECRET_KEY=os.environ.get('SECRET_KEY')) # replace with env later
+    from . import routes # registers routes after app exists
+    return app
+
